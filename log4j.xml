@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="std_out" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy/MM/dd HH:mm:ss}][%p][%C-%L] %m%n" />
+        </layout>
+    </appender>
+	
+    <appender name="fileDaily" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./log/TEJ_PROJECT.log" />
+        <param name="DatePattern" value="'.'yyyyMM" />
+        <param name="Append" value="true" />
+        <param name="Threshold" value="info" />
+		<param name="encoding" value="UTF-8" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy/MM/dd HH:mm:ss}][%p][%C-%L] %m%n" />
+        </layout>
+    </appender> 
+	<!--
+	<appender name="psqlDaily" class="org.apache.log4j.jdbc.JDBCAppender">
+		<param name="url" value="jdbc:psql://10.10.10.221:5432/admin"/>
+		<param name="driver" value="org.postgresql.Driver"/>
+		<param name="user" value="postgres"/>
+		<param name="password" value="postgres@tej!"/>
+		<param name="sql" value="INSERT INTO public.web_joblog VALUES('%x','%d','%C','%p','%m')"/>
+		<layout class="org.apache.log4j.PatternLayout">
+    </layout>
+    </appender>
+	-->
+    <!-- by package group ，利用package來分模組 -->
+    <category name="com.tej">
+        <priority value="info" />
+        <appender-ref ref="std_out" />
+        <appender-ref ref="fileDaily" />
+    </category>
+    <category name="tej">
+        <priority value="info" />
+        <appender-ref ref="std_out" />
+        <appender-ref ref="fileDaily" />
+    </category>
+
+	<!-- Logger.getLogger(name) -->
+	<logger name="IMPORT" additivity="false">  
+        <level value ="info"/> 	
+		<appender-ref ref="std_out" />
+        <appender-ref ref="fileDaily" />		
+    </logger>
+</log4j:configuration>

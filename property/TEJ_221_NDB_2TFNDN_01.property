@@ -1,0 +1,24 @@
+url0 = https://www.sfb.gov.tw/ch/home.jsp?id=95&parentpath=0,2
+url0 = https://www.sfb.gov.tw/ch/home.jsp?id=95&contentid=95&parentpath=0%2C2&mcustomize=news_list.jsp&qryweek=Y&dateid=queryid&qptdate=2022-03-01&qdldate=2022-04-14&keyword=%E8%AB%8B%E8%BC%B8%E5%85%A5%E6%9F%A5%E8%A9%A2%E9%97%9C%E9%8D%B5%E5%AD%97&page=&pagesize=100
+url= https://www.sfb.gov.tw/ch/home.jsp?id=95&contentid=95&parentpath=0%2C2&mcustomize=news_list.jsp&qryweek=Y&dateid=queryid&qptdate=[begDate]&qdldate=[endDate]&keyword=%E8%AB%8B%E8%BC%B8%E5%85%A5%E6%9F%A5%E8%A9%A2%E9%97%9C%E9%8D%B5%E5%AD%97&page=[page]&pagesize=
+post=false
+connecttimeout=20000
+readtimeout=20000
+retry=3
+encoding=UTF-8
+outdir=
+extname=txt
+separation=#
+proxyip=
+proxyport=
+rawmaxbyte=0
+target_encoding=utf-8
+tranferEncoding=true
+extractTextAboveTable=true
+showsql=
+dbname=fund
+schedule=twn_fund_sfb_C
+tablename=fund.attr_txsfbnewsinfo
+chain=TFNDN.TEJ_221_NDB_2TFNDN_01
+lastmail=N
+title=金融監督管理委員會證券期貨局每日新聞
